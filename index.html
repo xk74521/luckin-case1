@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="zh-CN" data-theme="light" data-font="sans" data-width="normal" data-density="comfortable" data-motion="on">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+<title>瑞幸咖啡 · 经营案例分析</title>
+<meta name="description" content="从退市危机到门店规模第一，拆解瑞幸咖啡的商业模式、供应链、数字化运营与竞争格局。" />
+<meta name="color-scheme" content="light dark" />
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='9' fill='%232563eb'/%3E%3Cpath d='M10 22V10h6.2a6 6 0 0 1 0 12H10Z' fill='none' stroke='white' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E" />
+<link rel="stylesheet" href="css/styles.css" />
+<script>document.documentElement.classList.add("js");</script>
+</head>
+<body>
+
+<a class="skip-link" href="#main">跳到正文</a>
+
+<!-- ========== 顶栏 ========== -->
+<header class="topbar" id="top">
+  <div class="topbar-inner">
+    <a class="brand" href="#top" aria-label="回到顶部">
+      <span class="brand-mark" aria-hidden="true"></span>
+      <span class="brand-text">
+        <span class="brand-name" data-edit="meta.brand">瑞幸咖啡</span>
+        <span class="brand-tag" data-edit="meta.brandTag">经营案例分析</span>
+      </span>
+    </a>
+
+    <nav class="nav" id="nav" aria-label="章节导航"></nav>
+
+    <div class="topbar-actions">
+      <button class="icon-btn" id="btn-edit-top" type="button" aria-pressed="false" title="编辑页面文字">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.1 2.1 0 0 1 3 3L7 19l-4 1 1-4Z"/></svg>
+        <span class="sr-only">编辑模式</span>
+      </button>
+      <button class="btn btn-ghost" id="btn-settings" type="button">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 1 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 1 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 1 1-2.83-2.83l.06-.06a1.65 1.65 0 0 0 .33-1.82 1.65 1.65 0 0 0-1.51-1H3a2 2 0 1 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 1 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.6 1.65 1.65 0 0 0 10 3.09V3a2 2 0 1 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 1 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9c.14.6.65 1.05 1.27 1.05H21a2 2 0 1 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1Z"/></svg>
+        <span>设置</span>
+      </button>
+    </div>
+  </div>
+  <div class="scroll-line"><span id="progress"></span></div>
+</header>
+
+<!-- ========== 正文（由 app.js 渲染） ========== -->
+<main id="main">
+  <noscript>
+    <div class="wrap" style="padding:80px 0">
+      <h1>需要启用 JavaScript</h1>
+      <p>这个页面的内容由 <code>js/config.js</code> 渲染生成，请在浏览器设置中允许 JavaScript 后刷新。</p>
+    </div>
+  </noscript>
+</main>
+
+<footer id="site-footer" class="site-footer"></footer>
+
+<!-- ========== 浮动目录 ========== -->
+<nav class="toc" id="toc" aria-label="页面目录"></nav>
+
+<!-- ========== 设置面板 ========== -->
+<div class="scrim" id="scrim"></div>
+<aside class="drawer" id="drawer" aria-hidden="true" aria-label="站点设置" role="dialog" aria-modal="true" tabindex="-1">
+  <div class="dr-head">
+    <div>
+      <h2>站点设置</h2>
+      <p>改动实时生效，并自动保存在本机浏览器</p>
+    </div>
+    <button class="icon-btn" id="drawer-close" type="button" aria-label="关闭设置">
+      <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+  </div>
+
+  <div class="tabs" role="tablist" aria-label="设置分类">
+    <button class="tab active" role="tab" data-tab="look" type="button">外观</button>
+    <button class="tab" role="tab" data-tab="mods" type="button">模块</button>
+    <button class="tab" role="tab" data-tab="content" type="button">内容</button>
+    <button class="tab" role="tab" data-tab="data" type="button">配置</button>
+  </div>
+
+  <div class="dr-body">
+
+    <!-- 外观 -->
+    <div class="tab-panel active" data-panel="look">
+      <div class="set-group">
+        <h3>主题色</h3>
+        <div class="swatches" id="swatches" role="group" aria-label="预设主题色"></div>
+        <label class="row">
+          <span>自定义颜色</span>
+          <input type="color" id="accent-input" data-key="theme.accent" />
+        </label>
+      </div>
+
+      <div class="set-group">
+        <h3>显示模式</h3>
+        <div class="segmented" data-key="theme.mode">
+          <button data-val="light" type="button">浅色</button>
+          <button data-val="dark" type="button">深色</button>
+          <button data-val="auto" type="button">跟随系统</button>
+        </div>
+      </div>
+
+      <div class="set-group">
+        <h3>字体</h3>
+        <div class="segmented" data-key="theme.font">
+          <button data-val="sans" type="button">无衬线</button>
+          <button data-val="serif" type="button">衬线</button>
+        </div>
+      </div>
+
+      <div class="set-group">
+        <h3>内容宽度</h3>
+        <div class="segmented" data-key="theme.width">
+          <button data-val="narrow" type="button">窄</button>
+          <button data-val="normal" type="button">标准</button>
+          <button data-val="wide" type="button">宽</button>
+        </div>
+      </div>
+
+      <div class="set-group">
+        <h3>圆角</h3>
+        <div class="row">
+          <input type="range" id="radius-range" data-key="theme.radius" min="0" max="28" step="1" />
+          <output id="radius-out">16px</output>
+        </div>
+      </div>
+
+      <div class="set-group">
+        <h3>信息密度</h3>
+        <div class="segmented" data-key="theme.density">
+          <button data-val="comfortable" type="button">舒适</button>
+          <button data-val="compact" type="button">紧凑</button>
+        </div>
+      </div>
+
+      <div class="set-group">
+        <h3>其他</h3>
+        <label class="row">
+          <span>右侧浮动目录</span>
+          <input type="checkbox" class="switch" data-key="meta.showToc" />
+        </label>
+        <label class="row">
+          <span>滚动动效</span>
+          <input type="checkbox" class="switch" data-key="theme.motion" />
+        </label>
+      </div>
+    </div>
+
+    <!-- 模块 -->
+    <div class="tab-panel" data-panel="mods">
+      <div class="set-group">
+        <h3>页面模块</h3>
+        <p class="hint">勾选控制显隐，↑ ↓ 调整顺序。</p>
+        <ul class="mod-list" id="mod-list"></ul>
+      </div>
+    </div>
+
+    <!-- 内容 -->
+    <div class="tab-panel" data-panel="content">
+      <div class="set-group">
+        <h3>直接编辑文字</h3>
+        <p class="hint">开启后，页面上所有文字都可以点开修改；改完点其他地方即可保存。适合快速改标题、段落、表格数字。</p>
+        <button class="btn btn-primary btn-block" id="btn-edit-panel" type="button">开启编辑模式</button>
+      </div>
+      <div class="set-group">
+        <h3>批量修改</h3>
+        <p class="hint">结构性改动（新增模块、增加列表条目、换图表数据）建议直接编辑 <code>js/config.js</code>，刷新后生效。详见 <code>README.md</code>。</p>
+      </div>
+    </div>
+
+    <!-- 配置 -->
+    <div class="tab-panel" data-panel="data">
+      <div class="set-group">
+        <h3>导出 / 导入</h3>
+        <p class="hint">导出的 JSON 包含当前全部设置与文字，可以备份、换电脑使用，或作为 <code>config.js</code> 的参考。</p>
+        <div class="btn-row">
+          <button class="btn btn-ghost" id="btn-export" type="button">导出配置</button>
+          <button class="btn btn-ghost" id="btn-import" type="button">导入配置</button>
+        </div>
+        <input type="file" id="file-input" accept="application/json,.json" hidden />
+      </div>
+      <div class="set-group">
+        <h3>发布上线</h3>
+        <p class="hint">面板里改过的内容只存在本机浏览器，直接上传文件不会带上。点下面的按钮，把当前全部设置导出成一份可直接使用的 <code>config.js</code>，覆盖 <code>js/config.js</code> 后再上传，别人看到的才是你改过的版本。</p>
+        <button class="btn btn-primary btn-block" id="btn-export-js" type="button">下载 config.js（含当前设置）</button>
+      </div>
+      <div class="set-group">
+        <h3>恢复</h3>
+        <p class="hint">清除本机保存的所有修改，回到 <code>config.js</code> 的初始状态。</p>
+        <button class="btn btn-danger btn-block" id="btn-reset" type="button">恢复默认设置</button>
+      </div>
+      <div class="set-group">
+        <h3>存储状态</h3>
+        <p class="hint" id="store-status">检测中…</p>
+      </div>
+    </div>
+
+  </div>
+</aside>
+
+<!-- 编辑模式提示条 -->
+<div class="editbar" id="editbar" hidden>
+  <span class="editbar-dot"></span>
+  <span>编辑模式：点击任意文字直接修改</span>
+  <button class="btn btn-primary btn-sm" id="editbar-done" type="button">完成</button>
+</div>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+<script src="js/config.js"></script>
+<script src="js/charts.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
