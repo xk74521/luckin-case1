@@ -769,6 +769,71 @@
       : "本地存储不可用（可能被浏览器隐私设置禁用），改动只在本次打开时生效，请用「导出配置」保存。";
   }
 
+  /* ---------------- 访问统计 ---------------- */
+  function initAnalytics() {
+    var a = config.analytics || {};
+    var p = String(a.provider || "").toLowerCase();
+    var id = String(a.id || "").trim();
+    if (!p || !id) return;
+    if (navigator.doNotTrack === "1") return;
+
+    var head = document.head || document.documentElement;
+    var s;
+
+    if (p === "baidu") {
+      window._hmt = window._hmt || [];
+      s = document.createElement("script");
+      s.async = true;
+      s.src = "https://hm.baidu.com/hm.js?" + encodeURIComponent(id);
+      head.appendChild(s);
+      return;
+    }
+
+    if (p === "51la" || p === "51.la") {
+      s = document.createElement("script");
+      s.charset = "UTF-8";
+      s.id = "LA_COLLECT";
+      s.src = "https://sdk.51.la/js-sdk-pro.min.js";
+      s.onload = function () {
+        if (window.LA && window.LA.init) {
+          window.LA.init({ id: id, ck: String(a.ck || ""), autoTrack: true });
+        }
+      };
+      head.appendChild(s);
+      return;
+    }
+
+    if (p === "ga4" || p === "google") {
+      s = document.createElement("script");
+      s.async = true;
+      s.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(id);
+      head.appendChild(s);
+      window.dataLayer = window.dataLayer || [];
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.gtag("js", new Date());
+      window.gtag("config", id);
+      return;
+    }
+
+    if (p === "goatcounter") {
+      s = document.createElement("script");
+      s.async = true;
+      s.setAttribute("data-goatcounter", "https://" + id + ".goatcounter.com/count");
+      s.src = "https://gc.zgo.at/count.js";
+      head.appendChild(s);
+      return;
+    }
+
+    if (p === "umami") {
+      s = document.createElement("script");
+      s.async = true;
+      s.defer = true;
+      s.setAttribute("data-website-id", id);
+      s.src = a.src || "https://cloud.umami.is/script.js";
+      head.appendChild(s);
+    }
+  }
+
   /* ---------------- 启动 ---------------- */
   function init() {
     applyTheme();
@@ -776,6 +841,7 @@
     render();
     bindStatic();
     checkStorage();
+    initAnalytics();
     onScroll();
   }
 

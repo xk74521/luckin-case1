@@ -33,6 +33,22 @@ window.SITE_CONFIG = {
     motion: true         // 滚动动效
   },
 
+  /* ---------- 访问统计 ----------
+   * provider 留空 = 不统计。
+   *   "baidu"       国内首选，dashboard 在 tongji.baidu.com（id 填 hm.js? 后面那串 32 位）
+   *   "51la"        国内备选（id + ck 都要填）
+   *   "ga4"         Google Analytics 4（id 形如 G-XXXXXXXXXX，需科学上网看后台）
+   *   "goatcounter" 轻量无 Cookie（id 填你的子域名，如 abc → abc.goatcounter.com）
+   *   "umami"       自建或云版（id 填 website-id，src 填脚本地址，默认 umami 云）
+   * 只在你自己浏览器里改是没用的，要改这个文件并上传才生效。
+   */
+  analytics: {
+    provider: "baidu",
+    id: "57f814544c9e96ce3a8fb814f40963a8",
+    ck: "",
+    src: ""
+  },
+
   /* ---------- 模块：顺序即页面顺序，enabled 控制显隐 ---------- */
   modules: [
     { id: "hero",     label: "概览",     enabled: true },
